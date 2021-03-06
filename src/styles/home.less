@@ -1,5 +1,5 @@
 .portrait {
-    margin: 50px 0px 12px 140px;
+    margin: 50px 0px 16px 140px;
     height: 100%;
     max-width: 100%;
     max-height: 406px;
@@ -11,13 +11,38 @@
     align-items: center;
 }
 
+.description-wrapper {
+    max-width: 900px;
+}
+
 @media(max-width: 992px) {
     .greetings-wrapper {
         padding-right: 0px !important;
     }
 }
 
-@media(max-width: 1200px) {
+@media(max-width: 767px){
+    .greetings-wrapper{
+        height: 300px;
+    }
+    .portrait {
+        margin: 0px;
+        padding-left: 30px;
+        max-height: 300px;
+    }
+}
+@media(max-width: 576px) {
+    .portrait {
+        padding-left: 0px;
+        max-height: 300px;
+    }
+    .portrait-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1200px) {
     .portrait {
         margin: 50px 0px 12px 40px;
         max-height: 326px;
