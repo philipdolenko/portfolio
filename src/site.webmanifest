@@ -1,8 +1,8 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "Philip",
+  "name": "Philip Dolenko",
   "icons": [{
-    "src": "icon.png",
+    "src": "assets/icon.png",
     "type": "image/png",
     "sizes": "192x192"
   }],
