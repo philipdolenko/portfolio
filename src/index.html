@@ -16,19 +16,52 @@
   <link rel="apple-touch-icon" href="assets/icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="lib/bootstrap-4.5.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/main.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
 
+  <header>
+    <nav class="navbar navbar-expand-sm container-lg px-4">
+      <div></div>
+      <button class="navbar-toggler btn-no-style" type="button" data-toggle="collapse"
+        data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <img class="nav-menu-icon" src="assets/menu.svg" />
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <div class="navbar-nav float-right text-right pr-3 nav-items-wrapper">
+          <a class="nav-item nav-link nav-item-selected" href="#">Home</a>
+          <a class="nav-item nav-link" href="#">Portfolio</a>
+          <a class="nav-item nav-link" href="#">Resume</a>
+          <a class="nav-item nav-link" href="#">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
   <!-- Add your site or application content here -->
-  <p class="test">Hello world! This is HTML5 Boilerplate.</p>
-  
-  <script src="scripts/main.js"></script>
 
+  <div class="container-lg px-4">
+    <div class="row">
+      <div class="col-12 col-md-6 greetings-wrapper">
+        <div class="greetings">
+          <h3>Hi, I’m Philip</h3>
+          <h1>iOS App Developer 👋</h1>
+        </div>
+      </div>
+      <div class="col-6 col-md-6">
+        <img class="portrait" src="assets/portrait.jpg"/>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+  <script src="lib/jquery-3.3.1.slim.min.js"></script>
+  <script src="lib/popper.min.js"></script>
+  <script src="lib/bootstrap-4.5.3/js/bootstrap.min.js"></script>
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
