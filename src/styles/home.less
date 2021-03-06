@@ -13,6 +13,7 @@
 
 .description-wrapper {
     max-width: 900px;
+    margin-bottom: 60px;
 }
 
 @media(max-width: 992px) {
@@ -21,22 +22,25 @@
     }
 }
 
-@media(max-width: 767px){
-    .greetings-wrapper{
+@media(max-width: 767px) {
+    .greetings-wrapper {
         height: 300px;
     }
+
     .portrait {
         margin: 0px;
         padding-left: 30px;
         max-height: 300px;
     }
 }
+
 @media(max-width: 576px) {
     .portrait {
         padding-left: 0px;
         max-height: 300px;
     }
-    .portrait-wrapper{
+
+    .portrait-wrapper {
         display: flex;
         justify-content: center;
     }
@@ -47,4 +51,81 @@
         margin: 50px 0px 12px 40px;
         max-height: 326px;
     }
+}
+
+.animoji-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width: 767px) {
+    .animoji-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex-basis: 100%;
+    }
+}
+
+.animoji {
+    width: 140px;
+    object-fit: contain;
+    margin-bottom: 40px;
+}
+
+.quote-wrapper {
+    min-height: 185px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    max-width: 700px;
+}
+
+@media(min-width: 768px) {
+    .quote-wrapper {
+        padding-left: 0px;
+    }
+}
+
+.quote-text {
+    font-size: 1.43rem;
+    color: @light-grey;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+
+blockquote {
+    margin: 0px;
+}
+
+blockquote:before,
+blockquote:after {
+    font-size: 70px;
+    font-family: Arial, sans-serif;
+    line-height: 1em;
+    height: 30px;
+    color: @light-grey;
+}
+
+blockquote:before {
+    content: '\201C';
+    position: absolute;
+    top: 10px;
+    left: 3px;
+}
+
+@media(max-width: 766px) {
+    blockquote:before {
+        left: 18px;
+    }
+}
+
+blockquote:after {
+    content: '\201D';
+    position: absolute;
+    right: 25px;
+    bottom: 10px;
 }

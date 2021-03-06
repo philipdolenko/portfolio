@@ -21,7 +21,7 @@
     padding: 16px 0px 3px 0px !important;
     display: inline-block;
     position: relative;
-    color: #A6A9B4;
+    color: @light-grey;
     transition: color 0.15s ease;
 }
 
@@ -37,11 +37,11 @@
 }
 
 .nav-item-selected {
-    color: #191919 !important;
+    color: @black !important;
 }
 
 .nav-items-wrapper>a:hover {
-    color: #191919;
+    color: @black;
 }
 
 @media(min-width: 576px) {
@@ -53,7 +53,7 @@
         height: 2px;
         left: 50%;
         position: absolute;
-        background: #191919;
+        background: @black;
         transition: width 0.15s ease 0s, left 0.15s ease 0s;
         width: 0;
     }
