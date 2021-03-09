@@ -6,7 +6,28 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     line-height: 1.8em;
-    background-color: #fff;
+    background-color: #ffffff;
+}
+
+.light-grey-color {
+    color: @light-grey;
+}
+
+.download-link-m{
+    transform: translate(0px, -6px);
+    height: 100%;
+    line-height: 100%;
+}
+
+.download-link{
+    color: @blue !important;
+    transition: color 0.15s ease !important;
+}
+
+.download-link:hover {
+    color: @dark-blue !important;
+    cursor: pointer;
+    text-decoration: none !important;
 }
 
 h1 {
@@ -33,12 +54,28 @@ h4 {
     font-size: 1.7rem;
 }
 
+a {
+    transition: color 0.15s ease;
+}
+
 p {
     font-size: 1.15rem;
     line-height: 1.45rem;
 }
 
-@media(max-width: 1200px) {
+p a {
+    color: @light-grey;
+    text-decoration: underline;
+}
+p a:hover {
+    color: @black;
+}
+
+.fw-medium{
+    font-weight: 500;
+}
+
+@media(max-width: @xl-max) {
     h1 {
         font-size: 2.3rem;
     }
@@ -59,4 +96,8 @@ p {
     p {
         font-size: 0.9rem;
     }
+}
+
+@media (min-width: @md)  {
+    .mobile-break { display: none; }
 }

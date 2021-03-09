@@ -1,62 +1,82 @@
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="">
 
 <head>
   <meta charset="utf-8">
-  <title>Page Not Found</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    * {
-      line-height: 1.2;
-      margin: 0;
-    }
+  <title>404 Not Found</title>
 
-    html {
-      color: #888;
-      display: table;
-      font-family: sans-serif;
-      height: 100%;
-      text-align: center;
-      width: 100%;
-    }
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icon.png">
 
-    body {
-      display: table-cell;
-      vertical-align: middle;
-      margin: 2em auto;
-    }
+  <link rel="stylesheet" href="lib/bootstrap-4.5.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/main.css">
 
-    h1 {
-      color: #555;
-      font-size: 2em;
-      font-weight: 400;
-    }
+  <meta name="theme-color" content="#fafafa">
 
-    p {
-      margin: 0 auto;
-      width: 280px;
-    }
-
-    @media only screen and (max-width: 280px) {
-
-      body,
-      p {
-        width: 95%;
-      }
-
-      h1 {
-        font-size: 1.5em;
-        margin: 0 0 0.3em;
-      }
-
-    }
-  </style>
+  <meta name=”robots” content=”noindex, nofollow”>
 </head>
 
 <body>
-  <h1>Page Not Found</h1>
-  <p>Sorry, but the page you were trying to view does not exist.</p>
+  <header>
+    <nav class="navbar navbar-expand-sm container-lg px-4 nav-wrapper">
+      <div></div>
+      <button class="navbar-toggler btn-no-style" type="button" data-toggle="collapse"
+        data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <img class="nav-menu-icon" src="assets/menu.svg" />
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <div class="navbar-nav float-right text-right pr-3 nav-items-wrapper nav-items-underliner">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link" href="/portfolio">Portfolio</a>
+          <a class="nav-item nav-link" href="/resume">Resume</a>
+          <a class="nav-item nav-link" href="/contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="for-o-for">
+    <div class="container-lg px-4">
+      <div class="for-o-for-title">
+        Page not found 🔦
+      </div>
+    </div>
+    <div class="home-contact">
+      <div class="for-o-for-wrapper">4🐣4</div>
+      <a href="/">
+        Home
+      </a>
+    </div>
+  
+    <footer class="container-lg px-4">
+  
+      <div class="row footer-content">
+        <div class="col-sm text-sm-right soc-med-block order-sm-3">
+          <a target="_blank" rel="noopener noreferrer" href="https://join.skype.com/invite/p290cXzLBFV4">Skype</a>
+          <br class="mobile-break" />
+          <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/philipdolenko/">Linkedin</a>
+        </div>
+        <a class="col-sm text-left order-sm-1 d-none d-sm-block" href="mailto:philip@dolenko.com">
+          philip@dolenko.com
+        </a>
+        <div class="col-sm text-center light-grey-color order-sm-2">
+          <span class="d-sm-none">✨ </span>No worries ✨
+        </div>
+      </div>
+  
+    </footer>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+  <script src="lib/jquery-3.3.1.slim.min.js"></script>
+  <script src="lib/popper.min.js"></script>
+  <script src="lib/bootstrap-4.5.3/js/bootstrap.min.js"></script>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>
-<!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->

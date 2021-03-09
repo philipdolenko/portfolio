@@ -25,7 +25,7 @@
     transition: color 0.15s ease;
 }
 
-@media(max-width: 1200px) {
+@media(max-width: @xl-max) {
 
     .nav-items-wrapper>a {
         font-size: 1.15rem;
@@ -44,7 +44,7 @@
     color: @black;
 }
 
-@media(min-width: 576px) {
+@media(min-width: @sm) {
     .nav-item-selected-underline-off {
         background: none repeat scroll 0 0 transparent;
         bottom: 0;
@@ -67,11 +67,11 @@
         .nav-item-selected-underline-on() !important;
     }
 
-    .nav-items-wrapper>a:after {
+    .nav-items-underliner>a:after {
         .nav-item-selected-underline-off();
     }
 
-    .nav-items-wrapper>a:hover:after {
+    .nav-items-underliner>a:hover:after {
         .nav-item-selected-underline-on();
     }
 
