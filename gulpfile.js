@@ -26,6 +26,7 @@ copy all html files and assets
 gulp.task('copy', function() {
     gulp.src('src/**/*.html').pipe(gulp.dest('dist'));
     gulp.src('src/assets/**/*.*').pipe(gulp.dest('dist/assets'));
+    gulp.src('src/pdfs/**/*.*').pipe(gulp.dest('dist/pdfs'));
     gulp.src('src/lib/**/*.*').pipe(gulp.dest('dist/lib'));
     gulp.src('src/site.webmanifest').pipe(gulp.dest('dist'));
     gulp.src('src/browserconfig.xml').pipe(gulp.dest('dist'));
