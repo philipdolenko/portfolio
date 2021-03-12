@@ -1,0 +1,98 @@
+.lets-connect-wrapper {
+    background: @light-black;
+    min-height: 236px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 40px 0px;
+}
+
+.contact-form-wrapper {
+    margin: 80px 0px;
+    min-height: 600px;
+}
+.lets-connect-separator-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1px;
+    width: 100%;
+}
+.lets-connect-separator{
+    height: 1px;
+    width: 100%;
+    max-width: 286px;
+    background-color: white;
+}
+
+.lets-connect-title {
+    min-height: 100px;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+@media(max-width: @md-max) {
+    .lets-connect-title {
+        justify-content: center;
+    }
+    .lets-connect-info{
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+}
+
+.lets-connect-info{
+    min-width: 300px;
+    max-width: 600px;
+}
+.lets-connect-info-wrapper {
+    display: flex;
+    justify-content: center;
+}
+.lets-connect-item > a:hover {
+    cursor: pointer;
+}
+
+.lets-connect-icon {
+    width: 44px;
+    height: 44px;
+    padding: 9px;
+    object-fit: contain;
+}
+.lets-connect-icon-ln {
+    .lets-connect-icon();
+    padding: 6px 9px 12px 9px
+}
+
+.lets-connect-item-text{
+    margin-left: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.lets-connect-item-text:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.lets-connect-item {
+    display: flex;
+    align-items: center;
+}
+
+@media(max-width: @md-max) {
+    .lets-connect-title {
+        font-size: 1.5rem;
+    }
+    .lets-connect-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .lets-connect-icon-ln {
+        .lets-connect-icon();
+    }
+}
