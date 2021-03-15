@@ -16,32 +16,36 @@ body {
 .orange-color {
     color: @orange;
 }
+
 .green-color {
     color: @green;
 }
+
 .light-pink-color {
     color: @light-pink;
 }
+
 .pink-color {
     color: @pink;
 }
+
 .violet-color {
     color: @violet;
 }
 
-.download-link-m{
+.download-link-m {
     transform: translate(0px, -6px);
     height: 100%;
     line-height: 100%;
 }
 
-.download-link{
-    color: @blue !important;
+.download-link {
+    color: @blue  !important;
     transition: color 0.15s ease !important;
 }
 
 .download-link:hover {
-    color: @dark-blue !important;
+    color: @dark-blue  !important;
     cursor: pointer;
     text-decoration: none !important;
 }
@@ -83,11 +87,12 @@ p a {
     color: @light-grey;
     text-decoration: underline;
 }
+
 p a:hover {
     color: @black;
 }
 
-.fw-medium{
+.fw-medium {
     font-weight: 500;
 }
 
@@ -118,11 +123,36 @@ p a:hover {
     h1 {
         font-size: 8vw;
     }
+
     h3 {
         font-size: 6vw;
     }
 }
 
-@media (min-width: @md)  {
-    .mobile-break { display: none; }
+@media (min-width: @md) {
+    .mobile-break {
+        display: none;
+    }
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    font-style: italic;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    font-style: italic;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    font-style: italic;
+}
+
+:-ms-input-placeholder {
+    font-style: italic;
 }

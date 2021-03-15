@@ -26,6 +26,8 @@
 
   <meta name="theme-color" content="#fafafa">
 
+  <meta name="format-detection" content="telephone=no">
+
   <meta name=”robots” content=”index, follow”>
   <meta name="twitter:title" content="iOS Developer">
   <meta name="twitter:description" content="Hi, I’m Philip 👋 Software developer
@@ -49,10 +51,10 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <div class="navbar-nav float-right text-right pr-3 nav-items-wrapper nav-items-underliner">
           <a class="nav-item nav-link" href="/">Home</a>
-          <a class="nav-item nav-link" href="/portfolio.html">Portfolio</a>
-          <a class="nav-item nav-link d-none d-sm-block" href="/pdfs/CV Philip Dolenko.pdf" target="_blank">Resume</a>
+          <a class="nav-item nav-link" href="/portfolio">Portfolio</a>
+          <a id="preview_resume_btn" class="nav-item nav-link d-none d-sm-block" href="/pdfs/CV Philip Dolenko.pdf" target="_blank">Resume</a>
           <a class="nav-item nav-link d-sm-none" href="/pdfs/CV Philip Dolenko.pdf" download>Resume</a>
-          <a class="nav-item nav-link nav-item-selected" href="/contact.html">Contact</a>
+          <a class="nav-item nav-link nav-item-selected" href="/contact">Contact</a>
         </div>
       </div>
     </nav>
@@ -60,9 +62,21 @@
 
   <div class="container-lg px-4 pt-3">
     <div class="contact-form-wrapper">
+      <form class="contact-form">
+        
+        <div class="contact-form-lbl">Dear Philip Dolenko,</div>
+        <textarea class="contact-form-placeholder" id="description-input" name="subject" placeholder="Brief description of your app and your vision... &#10;&#10;I usually reply in the next 24 hours" required></textarea>
 
+        <div class="contact-form-lbl">Best,</div>
+        <input class="contact-item contact-form-placeholder" type="text" id="name-input" name="name" placeholder="Your name" required>
+        <input class="contact-item" type="email-input" id="name-input" name="email" placeholder="Your email" required>
+
+        <div class="d-flex justify-content-end"><input type="submit" value="Submit" class="contact-btn"></div>
+
+      </form>
     </div>
   </div>
+  <button id="contact-btn" class="contact-btn">Submit</button>
 
   <div class="lets-connect-wrapper">
     <div class="container-lg px-4">
@@ -70,7 +84,9 @@
         <div class="col-sm lets-connect-title">
           <span>Let’s get in touch</span>
         </div>
-        <div class="lets-connect-separator-wrapper d-sm-none"><div class="lets-connect-separator"></div></div>
+        <div class="lets-connect-separator-wrapper d-sm-none">
+          <div class="lets-connect-separator"></div>
+        </div>
         <div class="col-sm lets-connect-info-wrapper">
           <div class="lets-connect-info">
             <div class="lets-connect-item">
@@ -83,7 +99,8 @@
             </div>
             <div class="lets-connect-item">
               <img src="/assets/icons/ic_linkedin.png" class="lets-connect-icon-ln" />
-              <a class="lets-connect-item-text" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/philipdolenko/">linkedin.com/in/philipdolenko</a>
+              <a class="lets-connect-item-text" target="_blank" rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/philipdolenko/">linkedin.com/in/philipdolenko</a>
             </div>
           </div>
         </div>
@@ -109,11 +126,10 @@
 
   </footer>
 
-
-  <script src="scripts/main.js"></script>
-  <script src="lib/jquery-3.3.1.slim.min.js"></script>
+  <script src="lib/jquery-3.6.0.min.js"></script>
   <script src="lib/popper.min.js"></script>
   <script src="lib/bootstrap-4.5.3/js/bootstrap.min.js"></script>
+  <script src="scripts/main.js"></script>
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;

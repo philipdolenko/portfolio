@@ -8,17 +8,25 @@
 }
 
 .contact-form-wrapper {
-    margin: 80px 0px;
-    min-height: 600px;
+    margin: 140px 0px;
+    display: flex;
+    justify-content: center;
 }
-.lets-connect-separator-wrapper{
+
+.contact-form {
+    max-width: 720px;
+    width: 80vw;
+}
+
+.lets-connect-separator-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 1px;
     width: 100%;
 }
-.lets-connect-separator{
+
+.lets-connect-separator {
     height: 1px;
     width: 100%;
     max-width: 286px;
@@ -38,21 +46,24 @@
     .lets-connect-title {
         justify-content: center;
     }
-    .lets-connect-info{
+
+    .lets-connect-info {
         margin-bottom: 30px;
         margin-top: 30px;
     }
 }
 
-.lets-connect-info{
+.lets-connect-info {
     min-width: 300px;
     max-width: 600px;
 }
+
 .lets-connect-info-wrapper {
     display: flex;
     justify-content: center;
 }
-.lets-connect-item > a:hover {
+
+.lets-connect-item>a:hover {
     cursor: pointer;
 }
 
@@ -62,19 +73,20 @@
     padding: 9px;
     object-fit: contain;
 }
+
 .lets-connect-icon-ln {
     .lets-connect-icon();
     padding: 6px 9px 12px 9px
 }
 
-.lets-connect-item-text{
+.lets-connect-item-text {
     margin-left: 10px;
     text-decoration: none;
     color: white;
     font-size: 1.1rem;
 }
 
-.lets-connect-item-text:hover{
+.lets-connect-item-text:hover {
     text-decoration: none;
     color: white;
 }
@@ -88,11 +100,50 @@
     .lets-connect-title {
         font-size: 1.5rem;
     }
+
     .lets-connect-icon {
         width: 40px;
         height: 40px;
     }
+
     .lets-connect-icon-ln {
         .lets-connect-icon();
     }
+}
+
+.contact-style {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid @light-grey;
+    border-radius: 1px;
+}
+
+.contact-form-lbl {
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.contact-form>textarea {
+    .contact-style();
+    margin-bottom: 24px;
+    min-height: 200px;
+}
+
+.contact-item {
+    .contact-style();
+    margin-bottom: 20px;
+}
+
+.contact-btn {
+    height: 44px;
+    width: 134px;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 1px;
+    background-color: @light-black;
 }
