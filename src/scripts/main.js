@@ -1,14 +1,4 @@
 console.log("Hello fellow developer! You know, I'm something of a web dev myself :)");
-console.log("LOl");
-
-
-$("#contact-btn").click(function () {
-    sendEMAIL();
-});
-$('.contact-form').on('submit', function () {
-    sendEMAIL();
-    return false;
-});
 
 var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
     navigator.userAgent &&
@@ -22,83 +12,71 @@ $(document).ready(function () {
     }
 })
 
+$('.contact-form').on('submit', function (e) {
+    sendEMAIL();
+
+    e.preventDefault();
+});
+
 
 
 function sendEMAIL() {
-    alert('Form submitted!');
+    $('#contact-form-spinner').show();
+    $('#email-modal-label').text("Form submitted!");
+    $('#email-bodal-body').text("Thanks for filling out the form! It will be processed in a second!");
+    $('#email-modal').modal('show');
+
+    var URL = "https://contact.philipdolenko.ml";
+
     var name = $("#name-input").val();
-    var phone = "+380984139224";
+    var token = $("#token").val();
     var email = $("#email-input").val();
     var desc = $("#description-input").val();
     var data = {
         name: name,
-        phone: phone,
         email: email,
+        token: token,
         desc: desc
     };
 
-    var createCORSRequest = function (method, url) {
-        var xhr = new XMLHttpRequest();
-        if ("withCredentials" in xhr) {
-            // Most browsers.
-            xhr.open(method, url, true);
-        } else if (typeof XDomainRequest != "undefined") {
-            // IE8 & IE9
-            xhr = new XDomainRequest();
-            xhr.open(method, url);
-        } else {
-            // CORS not supported.
-            xhr = null;
+    $.ajax({
+        type: "POST",
+        url: URL,
+        dataType: "json",
+        crossDomain: "true",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(data),
+
+        success: function (e) {
+            $('#email-modal').modal('show');
+            $('#contact-form-spinner').hide();
+
+            if(e && e.errorMessage != undefined) {
+                $('#email-modal-label').text("Error: Message is not sended");
+                $('#email-bodal-body').text("Please try again, or contact me via email");
+            } else {
+                $('#email-modal-label').text("Thank you for getting in touch!");
+
+                var obj = $('#email-bodal-body').text("Message was sent successfully.\nI will get back in touch with you soon!\n\nHave a great day!");
+                obj.html(obj.html().replace(/\n/g,'<br/>'));
+
+                $("#contact-form")[0].reset();
+            }
+            console.log("res: "+ e);
+            refreshToken();
+        },
+        error: function () {
+            $('#contact-form-spinner').hide();
+            $('#email-modal-label').text("Error: Message is not sended");
+            $('#email-bodal-body').text("Please try again, or contact me via email");
+            refreshToken();
         }
-        return xhr;
-    };
+    });
+}
 
-    var url = 'https://contact.philipdolenko.ml';
-    var method = 'POST';
-    var xhr = createCORSRequest(method, url);
-
-    xhr.onload = function () {
-        // Success code goes here.
-    };
-
-    xhr.onerror = function () {
-        // Error code goes here.
-    };
-
-    xhr.send(JSON.stringify(data));
-
-    // var URL = "https://contact.philipdolenko.ml";
-
-    // var name = $("#name-input").val();
-    // var phone = "+380984139224";
-    // var email = $("#email-input").val();
-    // var desc = $("#description-input").val();
-    // var data = {
-    //     name: name,
-    //     phone: phone,
-    //     email: email,
-    //     desc: desc
-    // };
-
-    // $.ajax({
-    //     type: "POST",
-    //     url: URL,
-    //     dataType: "json",
-    //     crossDomain: "true",
-    //     contentType: "application/json; charset=utf-8",
-    //     data: JSON.stringify(data),
-
-
-    //     success: function () {
-    //         // clear form and show a success message
-    //         alert("Successfull");
-    //         document.getElementById("contact-form").reset();
-    //         location.reload();
-    //     },
-    //     error: function () {
-    //         // show an error message
-    //         alert("UnSuccessfull");
-    //     }
-    // });
-
+function refreshToken(){
+    grecaptcha.execute('6Lek94AaAAAAAOK4H6t3IN_oHAbV_E08YnXVsNkV', { action: 'homepage' }).then(function (token) {
+        console.log('refreshed token:', token);
+        document.getElementById("token").value = token;
+      });
 }

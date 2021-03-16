@@ -28,7 +28,6 @@
 
   <meta name="format-detection" content="telephone=no">
 
-  <meta name=”robots” content=”index, follow”>
   <meta name="twitter:title" content="iOS Developer">
   <meta name="twitter:description" content="Hi, I’m Philip 👋 Software developer
   with four years of commercial experience. I love creating awesome 
@@ -36,6 +35,8 @@
   <meta name="twitter:image" content="https://philip.dolenko.com/assets/preview-wide.jpg">
   <meta name="twitter:site" content="@_Pylyp_">
   <meta name="twitter:creator" content="@_Pylyp_">
+
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lek94AaAAAAAOK4H6t3IN_oHAbV_E08YnXVsNkV"></script>
 </head>
 
 <body>
@@ -46,14 +47,15 @@
       <button class="navbar-toggler btn-no-style" type="button" data-toggle="collapse"
         data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
         aria-label="Toggle navigation">
-        <img class="nav-menu-icon" src="assets/icons/menu.svg" />
+        <img class="nav-menu-icon" src="assets/icons/menu.svg" alt="Menu"/>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <div class="navbar-nav float-right text-right pr-3 nav-items-wrapper nav-items-underliner">
           <a class="nav-item nav-link" href="/">Home</a>
           <a class="nav-item nav-link" href="/portfolio">Portfolio</a>
-          <a id="preview_resume_btn" class="nav-item nav-link d-none d-sm-block" href="/pdfs/CV Philip Dolenko.pdf" target="_blank">Resume</a>
-          <a class="nav-item nav-link d-sm-none" href="/pdfs/CV Philip Dolenko.pdf" download>Resume</a>
+          <a id="preview_resume_btn" class="nav-item nav-link d-none d-sm-block" href="/pdfs/CV%20Philip%20Dolenko.pdf"
+            target="_blank">Resume</a>
+          <a class="nav-item nav-link d-sm-none" href="/pdfs/CV%20Philip%20Dolenko.pdf" download>Resume</a>
           <a class="nav-item nav-link nav-item-selected" href="/contact">Contact</a>
         </div>
       </div>
@@ -62,21 +64,25 @@
 
   <div class="container-lg px-4 pt-3">
     <div class="contact-form-wrapper">
-      <form class="contact-form">
-        
+      <form id="contact-form" class="contact-form">
+
         <div class="contact-form-lbl">Dear Philip Dolenko,</div>
-        <textarea class="contact-form-placeholder" id="description-input" name="subject" placeholder="Brief description of your app and your vision... &#10;&#10;I usually reply in the next 24 hours" required></textarea>
+        <textarea class="contact-form-placeholder" id="description-input" name="subject"
+          placeholder="Brief description of your app and your vision... &#10;&#10;I usually reply in the next 24 hours"
+          required></textarea>
 
         <div class="contact-form-lbl">Best,</div>
-        <input class="contact-item contact-form-placeholder" type="text" id="name-input" name="name" placeholder="Your name" required>
-        <input class="contact-item" type="email-input" id="name-input" name="email" placeholder="Your email" required>
+        <input class="contact-item contact-form-placeholder" type="text" id="name-input" name="name"
+          placeholder="Your name" required>
+        <input class="contact-item" type="email-input" id="email-input" name="email" placeholder="Your email" required>
 
-        <div class="d-flex justify-content-end"><input type="submit" value="Submit" class="contact-btn"></div>
+        <div class="d-flex justify-content-end"><button id="contact-btn" class="contact-btn">Submit</button></div>
 
+        <!-- hidden reCaptcha token input -->
+        <input type="hidden" id="token" name="token">
       </form>
     </div>
   </div>
-  <button id="contact-btn" class="contact-btn">Submit</button>
 
   <div class="lets-connect-wrapper">
     <div class="container-lg px-4">
@@ -116,15 +122,52 @@
         <br class="mobile-break" />
         <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/philipdolenko/">Linkedin</a>
       </div>
-      <a class="col-sm text-left order-sm-1 d-none d-sm-block" href="mailto:philip@dolenko.com">
-        philip@dolenko.com
-      </a>
+      <div class="col-sm text-left order-sm-1 d-none d-sm-block">
+        <a href="mailto:philip@dolenko.com">philip@dolenko.com</a>
+      </div>
       <div class="col-sm text-center light-grey-color order-sm-2">
         <span class="d-sm-none">✨ </span>have a nice day ✨
       </div>
     </div>
 
   </footer>
+  <!-- Modal -->
+  <div class="modal fade" id="email-modal" tabindex="-1" role="dialog" aria-labelledby="email-modal-label"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="email-modal-label">Form submitted!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="email-bodal-body" class="modal-body">
+          Thanks for filling out the form! It will be processed in a second!
+        </div>
+        <div id="contact-form-spinner">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6Lek94AaAAAAAOK4H6t3IN_oHAbV_E08YnXVsNkV', { action: 'homepage' }).then(function (token) {
+        document.getElementById("token").value = token;
+      });
+      // refresh token every minute to prevent expiration
+      setInterval(function () {
+        grecaptcha.execute('6Lek94AaAAAAAOK4H6t3IN_oHAbV_E08YnXVsNkV', { action: 'homepage' }).then(function (token) {
+          console.log('refreshed token:', token);
+          document.getElementById("token").value = token;
+        });
+      }, 60000);
+
+    });
+  </script>
 
   <script src="lib/jquery-3.6.0.min.js"></script>
   <script src="lib/popper.min.js"></script>
