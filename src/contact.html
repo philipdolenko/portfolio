@@ -47,7 +47,7 @@
       <button class="navbar-toggler btn-no-style" type="button" data-toggle="collapse"
         data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
         aria-label="Toggle navigation">
-        <img class="nav-menu-icon" src="assets/icons/menu.svg" alt="Menu"/>
+        <img class="nav-menu-icon" src="assets/icons/menu.svg" alt="Menu" />
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <div class="navbar-nav float-right text-right pr-3 nav-items-wrapper nav-items-underliner">
@@ -74,7 +74,7 @@
         <div class="contact-form-lbl">Best,</div>
         <input class="contact-item contact-form-placeholder" type="text" id="name-input" name="name"
           placeholder="Your name" required>
-        <input class="contact-item" type="email-input" id="email-input" name="email" placeholder="Your email" required>
+        <input class="contact-item" type="email" id="email-input" name="email" placeholder="Your email" required>
 
         <div class="d-flex justify-content-end"><button id="contact-btn" class="contact-btn">Submit</button></div>
 
@@ -96,15 +96,15 @@
         <div class="col-sm lets-connect-info-wrapper">
           <div class="lets-connect-info">
             <div class="lets-connect-item">
-              <img src="/assets/icons/ic_phone.png" class="lets-connect-icon" />
+              <img src="/assets/icons/ic_phone.png" class="lets-connect-icon" alt="tel: " />
               <div class="lets-connect-item-text">+380 984 139 224</div>
             </div>
             <div class="lets-connect-item">
-              <img src="/assets/icons/ic_email.png" class="lets-connect-icon" />
+              <img src="/assets/icons/ic_email.png" class="lets-connect-icon" alt="email: " />
               <a href="mailto:philip@dolenko.com" class="lets-connect-item-text">philip@dolenko.com</a>
             </div>
             <div class="lets-connect-item">
-              <img src="/assets/icons/ic_linkedin.png" class="lets-connect-icon-ln" />
+              <img src="/assets/icons/ic_linkedin.png" class="lets-connect-icon-ln" alt="In: " />
               <a class="lets-connect-item-text" target="_blank" rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/philipdolenko/">linkedin.com/in/philipdolenko</a>
             </div>
@@ -134,7 +134,7 @@
   <!-- Modal -->
   <div class="modal fade" id="email-modal" tabindex="-1" role="dialog" aria-labelledby="email-modal-label"
     aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog contact-modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="email-modal-label">Form submitted!</h5>
@@ -161,7 +161,6 @@
       // refresh token every minute to prevent expiration
       setInterval(function () {
         grecaptcha.execute('6Lek94AaAAAAAOK4H6t3IN_oHAbV_E08YnXVsNkV', { action: 'homepage' }).then(function (token) {
-          console.log('refreshed token:', token);
           document.getElementById("token").value = token;
         });
       }, 60000);
@@ -173,12 +172,15 @@
   <script src="lib/popper.min.js"></script>
   <script src="lib/bootstrap-4.5.3/js/bootstrap.min.js"></script>
   <script src="scripts/main.js"></script>
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZL798Q8TC"></script>
   <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-TZL798Q8TC');
   </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>

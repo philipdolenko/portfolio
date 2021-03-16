@@ -45,13 +45,14 @@
       <button class="navbar-toggler btn-no-style" type="button" data-toggle="collapse"
         data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
         aria-label="Toggle navigation">
-        <img class="nav-menu-icon" src="assets/icons/menu.svg" alt="Menu"/>
+        <img class="nav-menu-icon" src="assets/icons/menu.svg" alt="Menu" />
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <div class="navbar-nav float-right text-right pr-3 nav-items-wrapper nav-items-underliner">
           <a class="nav-item nav-link nav-item-selected" href="/">Home</a>
           <a class="nav-item nav-link" href="/portfolio">Portfolio</a>
-          <a id="preview_resume_btn" class="nav-item nav-link d-none d-sm-block" href="/pdfs/CV%20Philip%20Dolenko.pdf" target="_blank">Resume</a>
+          <a id="preview_resume_btn" class="nav-item nav-link d-none d-sm-block" href="/pdfs/CV%20Philip%20Dolenko.pdf"
+            target="_blank">Resume</a>
           <a class="nav-item nav-link d-sm-none" href="/pdfs/CV%20Philip%20Dolenko.pdf" download>Resume</a>
           <a class="nav-item nav-link" href="/contact">Contact</a>
         </div>
@@ -72,7 +73,7 @@
         <picture>
           <source srcset="/assets/portrait.webp" type="image/webp">
           <source srcset="/assets/portrait.jpg" type="image/jpeg">
-          <img class="portrait" src="assets/portrait.jpg" alt=""/>
+          <img class="portrait" src="assets/portrait.jpg" alt="" />
         </picture>
       </div>
     </div>
@@ -92,7 +93,7 @@
         <picture>
           <source srcset="/assets/animoji.webp" type="image/webp">
           <source srcset="/assets/animoji.jpg" type="image/jpeg">
-          <img src="/assets/animoji.jpg" class="animoji" alt=""/>
+          <img src="/assets/animoji.jpg" class="animoji" alt="" />
         </picture>
       </div>
       <div class="col-12 col-md-8 quote-wrapper">
@@ -104,7 +105,8 @@
       </div>
     </div>
     <p class="description-wrapper home-sec-p">
-      <a href="/portfolio">My portfolio</a> is filled with apps crafted with love and passion. I am glad to offer my help
+      <a href="/portfolio">My portfolio</a> is filled with apps crafted with love and passion. I am glad to offer my
+      help
       as an <span class="fw-medium">iOS
         Developer</span> to businesses of all sizes: <span class="fw-medium">start-ups, creative agencies, corporations
         and other freelancers.</span>
@@ -157,12 +159,15 @@
   <script src="lib/popper.min.js"></script>
   <script src="lib/bootstrap-4.5.3/js/bootstrap.min.js"></script>
   <script src="scripts/main.js"></script>
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZL798Q8TC"></script>
   <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-TZL798Q8TC');
   </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>
